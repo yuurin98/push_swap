@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": false,
-      "cwd": "/workspaces/push_swap",
-      "program": "/workspaces/push_swap/build/Debug/outDebug",
+      "externalConsole": true,
+      "cwd": "c:/Users/USER/OneDrive/Documents/42KL/push_swap",
+      "program": "c:/Users/USER/OneDrive/Documents/42KL/push_swap/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

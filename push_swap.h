@@ -17,11 +17,11 @@
 # include <unistd.h>
 # include <stdio.h>
 
-typedef struct s_stack
+typedef struct s_stack_node
 {
-	int				*stack;
-	int				size;
-}					t_stack;
+	int				value;
+	int				current_position;
+}					t_stack_node;
 
 typedef struct s_moves
 {
