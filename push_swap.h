@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:16:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/01/10 15:40:03 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/03/07 06:57:00 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 # include "libft.h"
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 # include <stdio.h>
 
 typedef struct s_stack_node
 {
-	int				value;
-	int				current_position;
+	int					value;
+	int					current_position;
+	int					final_index;
+	int					push_price;
+	bool				above_median;
+	bool				cheapest;
+	struct s_stack_node	*target_node;
+	struct s_stack_node	*next;
+	struct s_stack_node	*prev;	
 }					t_stack_node;
 
 typedef struct s_moves
