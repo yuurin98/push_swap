@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:16:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/03/11 16:22:08 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/03/13 13:43:56 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <stdio.h>
+
+typedef struct s_stack
+{
+	int				size;
+	int				*tab;
+}					t_stack;
 
 typedef struct s_stack_node
 {
