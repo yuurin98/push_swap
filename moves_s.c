@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:24:23 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/03/20 17:16:54 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:26:50 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	sa_quiet(stack_a);
 	sb_quiet(stack_b);
+	ft_printf("ss\n")
 }
