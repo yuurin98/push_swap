@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:24:23 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/03/20 17:04:47 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:16:54 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	sa(t_stack *stack_a)
 	temp = stack_a->tab[0];
 	stack_a->tab[0] = stack_a->tab[1];
 	stack_a->tab[1] = temp;
+	ft_printf("sa\n");
 }
 
 void	sb(t_stack *stack_b)
@@ -32,6 +33,7 @@ void	sb(t_stack *stack_b)
 	temp = stack_b->tab[0];
 	stack_b->tab[0] = stack_b->tab[1];
 	stack_b->tab[1] = temp;
+	ft_printf("sb\n");
 }
 
 void	sa_quiet(t_stack *stack_a)
