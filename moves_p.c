@@ -6,11 +6,11 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:13:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/03/13 14:48:25 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:04:25 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	int	i;
 

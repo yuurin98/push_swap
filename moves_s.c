@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves.c                                            :+:      :+:    :+:   */
+/*   moves_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:24:23 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/03/13 14:04:23 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:04:47 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sa(t_stack *stack_a)
 {
 	int	temp;
-	
+
 	if (stack_a->size < 2)
 		return ;
 	temp = stack_a->tab[0];
@@ -37,7 +37,7 @@ void	sb(t_stack *stack_b)
 void	sa_quiet(t_stack *stack_a)
 {
 	int	temp;
-	
+
 	if (stack_a->size < 2)
 		return ;
 	temp = stack_a->tab[0];
@@ -56,7 +56,7 @@ void	sb_quiet(t_stack *stack_b)
 	stack_b->tab[1] = temp;
 }
 
-void ss(t_stack *stack_a, t_stack *stack_b)
+void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	sa_quiet(stack_a);
 	sb_quiet(stack_b);
