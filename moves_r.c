@@ -6,9 +6,11 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:43:25 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/03/22 18:38:02 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:40:12 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	ra(t_stack *stack_a)
 {
