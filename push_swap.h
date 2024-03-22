@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:16:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/03/13 13:43:56 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:29:23 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,23 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 	struct s_stack_node	*prev;	
 }					t_stack_node;
+
+void	sa(t_stack *stack_a);
+void	sb(t_stack *stack_b);
+void	ss(t_stack *stack_a, t_stack *stack_b);
+void	pa(t_stack *stack_a, t_stack *stack_b);
+void	pb(t_stack *stack_a, t_stack *stack_b);
+void	ra(t_stack *stack_a);
+void	rb(t_stack *stack_b);
+void	rr(t_stack *stack_a, t_stack *stack_b);
+void	rra(t_stack *stack_a);
+void	rrb(t_stack *stack_b);
+void	rrr(t_stack *stack_a, t_stack *stack_b);
+void	sa_quiet(t_stack *stack_a);
+void	sb_quiet(t_stack *stack_b);
+void	ra_quiet(t_stack *stack_a);
+void	rb_quiet(t_stack *stack_b);
+void	rra_quiet(t_stack *stack_a);
+void	rrb_quiet(t_stack *stack_b);
 
 #endif
