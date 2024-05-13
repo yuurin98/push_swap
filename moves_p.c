@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:13:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/03/22 18:42:02 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/05/13 14:07:40 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	}
 	stack_a->size++;
 	stack_b->size--;
+	ft_printf("pa\n");
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
@@ -56,4 +57,5 @@ void	pb(t_stack *stack_a, t_stack *stack_b)
 	}
 	stack_b->size++;
 	stack_a->size--;
+	ft_printf("pb\n");
 }
