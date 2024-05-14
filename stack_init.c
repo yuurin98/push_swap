@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:30:09 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/14 20:42:03 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/05/14 21:04:31 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ static long	ft_atol(const char *s)
 			sign = -1;
 		s++;
 	}
-	
+	while (ft_isdigit(*s))
+		result = result * 10 + (*s++ - '0');
+	return (result * sign);
 }
 
 static void	append_node(t_stack_node **stack, int num)
@@ -64,6 +66,27 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		
+		if (check_syntax(argv[i]))
+			error_message(a);
+		n = ft_atol(argv[i]);
+		if (n > INT_MAX || n < INT_MIN)
+			error_message(a);
+		if (check_duplicate(*a, (int)n))
+			error_message(a);
+		append_node(a, (int)n);
+		i++;
 	}
+}
+
+t_stack_node	*get_cheapest(t_stack_node *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }

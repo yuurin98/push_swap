@@ -6,12 +6,13 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:16:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/13 15:32:40 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/05/14 20:59:52 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# include "../libft/libft.h"
 # include "../ft_printf/ft_printf.h"
 # include <limits.h>
 # include <stdlib.h>
