@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 14:36:44 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/14 17:36:15 by lchee-ti         ###   ########.fr       */
+/*   Created: 2023/10/19 17:32:21 by lchee-ti          #+#    #+#             */
+/*   Updated: 2023/10/23 11:42:26 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_tolower(int c)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
-
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	if (argc == 2)
-		argv == ft_split(argv[1], ' ');
-	if (argc > 1)
-	{
-		while (argv[++i])
-		{
-			if ()
-		}
-	}
-	return (0);
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	else
+		return (c);
 }
+
+/*
+#include <ctype.h>
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("tolower a: %c\n", tolower('0'));
+
+	printf("ft_tolower z: %c\n", ft_tolower('0'));
+}
+*/

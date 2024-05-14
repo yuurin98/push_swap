@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 14:36:44 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/14 17:36:15 by lchee-ti         ###   ########.fr       */
+/*   Created: 2023/10/27 15:33:27 by lchee-ti          #+#    #+#             */
+/*   Updated: 2023/10/27 15:42:00 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	int	i;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	if (argc == 2)
-		argv == ft_split(argv[1], ' ');
-	if (argc > 1)
+	i = 0;
+	if (s == NULL || f == NULL)
+		return ;
+	while (*s != '\0')
 	{
-		while (argv[++i])
-		{
-			if ()
-		}
+		f(i, s);
+		i++;
+		s++;
 	}
-	return (0);
+	return ;
 }

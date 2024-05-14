@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 14:36:44 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/14 17:36:15 by lchee-ti         ###   ########.fr       */
+/*   Created: 2023/10/27 17:51:49 by lchee-ti          #+#    #+#             */
+/*   Updated: 2023/10/27 18:13:19 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_list	*last;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	if (argc == 2)
-		argv == ft_split(argv[1], ' ');
-	if (argc > 1)
+	if (lst == NULL || new == NULL)
+		return ;
+	if (*lst == NULL)
 	{
-		while (argv[++i])
-		{
-			if ()
-		}
+		*lst = new;
+		return ;
 	}
-	return (0);
+	else
+	{
+		last = ft_lstlast(*lst);
+		last->next = new;
+	}
 }

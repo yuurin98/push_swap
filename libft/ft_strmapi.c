@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 14:36:44 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/14 17:36:15 by lchee-ti         ###   ########.fr       */
+/*   Created: 2023/10/27 15:07:00 by lchee-ti          #+#    #+#             */
+/*   Updated: 2023/10/27 15:32:46 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	int		i;
+	int		count;
+	char	*buffer;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
-		return (1);
-	if (argc == 2)
-		argv == ft_split(argv[1], ' ');
-	if (argc > 1)
+	if (s == NULL || f == NULL)
+		return (NULL);
+	i = 0;
+	count = ft_strlen(s);
+	buffer = (char *)malloc(sizeof(char) * count + 1);
+	if (buffer == NULL)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		while (argv[++i])
-		{
-			if ()
-		}
+		buffer[i] = f(i, s[i]);
+		i++;
 	}
-	return (0);
+	buffer[i] = '\0';
+	return (buffer);
 }
