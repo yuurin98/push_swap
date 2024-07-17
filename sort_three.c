@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 23:11:52 by yuurin98          #+#    #+#             */
-/*   Updated: 2024/07/07 23:20:34 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/07/18 00:10:35 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	sort_three(t_stack_node **a)
 		ra(&a);
 	else if ((*a)->next == biggest_node)
 		rra(&a);
-	if ((*a)->nbr > (*a)->next->nbr)
+	if ((*a)->value > (*a)->next->value)
 		sa(&a);
 }

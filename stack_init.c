@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:30:09 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/14 21:04:31 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/07/18 00:12:10 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,12 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	{
 		if (check_syntax(argv[i]))
 			error_message(a);
-		n = ft_atol(argv[i]);
-		if (n > INT_MAX || n < INT_MIN)
+		num = ft_atol(argv[i]);
+		if (num > INT_MAX || num < INT_MIN)
 			error_message(a);
-		if (check_duplicate(*a, (int)n))
+		if (check_duplicate(*a, (int)num))
 			error_message(a);
-		append_node(a, (int)n);
+		append_node(a, (int)num);
 		i++;
 	}
 }

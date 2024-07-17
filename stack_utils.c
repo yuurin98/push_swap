@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:05:46 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/07/07 23:18:05 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/07/18 00:16:21 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ int	stack_len(t_stack_node *stack)
 {
 	int				len;
 
+	if (!stack)
+		return (0);
 	len = 0;
 	while (stack)
 	{
 		len++;
-		tmp = tmp->next;
+		stack = stack->next;
 	}
 	return (len);
 }
@@ -57,9 +59,9 @@ t_stack_node	*find_min(t_stack_node *stack)
 	min = LONG_MAX;
 	while (stack)
 	{
-		if (stack->nbr < min)
+		if (stack->value < min)
 		{
-			min = stack->nbr;
+			min = stack->value;
 			min_node = stack;
 		}
 		stack = stack->next;
@@ -77,9 +79,9 @@ t_stack_node	*find_max(t_stack_node *stack)
 	max = LONG_MIN;
 	while (stack)
 	{
-		if (stack->nbr > max)
+		if (stack->value > max)
 		{
-			max = stack->nbr;
+			max = stack->value;
 			max_node = stack;
 		}
 		stack = stack->next;
