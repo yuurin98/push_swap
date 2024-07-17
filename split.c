@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:24:32 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/13 15:27:12 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/07/07 23:11:09 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 static int	ft_word_count(char const *s, char c)
 {

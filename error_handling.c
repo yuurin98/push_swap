@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:11:22 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/14 17:28:13 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/07/07 23:10:50 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int	check_duplicate(t_stack_node *a, int n)
 {

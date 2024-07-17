@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:13:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/13 14:07:40 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/07/18 00:03:30 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 	ft_printf("pa\n");
 }
 
-void	pb(t_stack *stack_a, t_stack *stack_b)
+void	pb(t_stack *stack_b, t_stack *stack_a)
 {
 	int	i;
 
