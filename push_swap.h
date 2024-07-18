@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:16:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/07/18 18:45:22 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/07/18 18:46:10 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void			rra_quiet(t_stack *stack_a);
 void			rrb_quiet(t_stack *stack_b);
 
 //Algorithm
-void	sort_three(t_stack_node **a);
-void	sort_stacks(t_stack_node **a, t_stack_node **b);
+void			sort_three(t_stack_node **a);
+void			sort_stacks(t_stack_node **a, t_stack_node **b);
 
 #endif
