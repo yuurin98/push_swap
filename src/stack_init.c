@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:30:09 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/01 23:19:52 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:53:29 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static long	ft_atol(const char *s)
 	}
 	while (ft_isdigit(*s))
 		result = result * 10 + (*s++ - '0');
+	if (*s != '\0')
+		error_message();
 	return (result * sign);
 }
 
@@ -68,12 +70,12 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	while (argv[i])
 	{
 		if (check_syntax(argv[i]))
-			error_message(a);
+			error_message();
 		num = ft_atol(argv[i]);
 		if (num > INT_MAX || num < INT_MIN)
-			error_message(a);
+			error_message();
 		if (check_duplicate(*a, (int)num))
-			error_message(a);
+			error_message();
 		append_node(a, (int)num);
 		i++;
 	}
@@ -94,6 +96,8 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 
 void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name)
 {
+	if (!top_node)
+		return ;
 	while (*stack != top_node)
 	{
 		if (stack_name == 'a')
