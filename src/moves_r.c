@@ -3,78 +3,90 @@
 /*                                                        :::      ::::::::   */
 /*   moves_r.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:43:25 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/03/22 18:40:12 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:13:24 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_stack *stack_a)
+void	ra(t_stack_node **stack_a)
 {
-	int	i;
-	int	temp;
+	t_stack_node	*first;
+	t_stack_node	*last;
 
-	i = 0;
-	temp = stack_a->tab[0];
-	while (i < stack_a->size - 1)
-	{
-		stack_a->tab[i] = stack_a->tab[i + 1];
-		i++;
-	}
-	stack_a->tab[i] = temp;
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	first = *stack_a;
+	last = *stack_a;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	(*stack_a)->prev = NULL;
+	last->next = first;
+	first->prev = last;
+	first->next = NULL;
 	ft_printf("ra\n");
 }
 
-void	rb(t_stack *stack_b)
+void	rb(t_stack_node **stack_b)
 {
-	int	i;
-	int	temp;
+	t_stack_node	*first;
+	t_stack_node	*last;
 
-	i = 0;
-	temp = stack_b->tab[0];
-	while (i < stack_b->size - 1)
-	{
-		stack_b->tab[i] = stack_b->tab[i + 1];
-		i++;
-	}
-	stack_b->tab[i] = temp;
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	first = *stack_b;
+	last = *stack_b;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_b = first->next;
+	(*stack_b)->prev = NULL;
+	last->next = first;
+	first->prev = last;
+	first->next = NULL;
 	ft_printf("rb\n");
 }
 
-void	ra_quiet(t_stack *stack_a)
+void	ra_quiet(t_stack_node **stack_a)
 {
-	int	i;
-	int	temp;
+	t_stack_node	*first;
+	t_stack_node	*last;
 
-	i = 0;
-	temp = stack_a->tab[0];
-	while (i < stack_a->size - 1)
-	{
-		stack_a->tab[i] = stack_a->tab[i + 1];
-		i++;
-	}
-	stack_a->tab[i] = temp;
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	first = *stack_a;
+	last = *stack_a;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_a = first->next;
+	(*stack_a)->prev = NULL;
+	last->next = first;
+	first->prev = last;
+	first->next = NULL;
 }
 
-void	rb_quiet(t_stack *stack_b)
+void	rb_quiet(t_stack_node **stack_b)
 {
-	int	i;
-	int	temp;
+	t_stack_node	*first;
+	t_stack_node	*last;
 
-	i = 0;
-	temp = stack_b->tab[0];
-	while (i < stack_b->size - 1)
-	{
-		stack_b->tab[i] = stack_b->tab[i + 1];
-		i++;
-	}
-	stack_b->tab[i] = temp;
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	first = *stack_b;
+	last = *stack_b;
+	while (last->next != NULL)
+		last = last->next;
+	*stack_b = first->next;
+	(*stack_b)->prev = NULL;
+	last->next = first;
+	first->prev = last;
+	first->next = NULL;
 }
 
-void	rr(t_stack *stack_a, t_stack *stack_b)
+void	rr(t_stack_node **stack_a, t_stack_node **stack_b)
 {
 	ra_quiet(stack_a);
 	rb_quiet(stack_b);
