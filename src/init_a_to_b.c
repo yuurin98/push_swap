@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 00:05:41 by yuurin98          #+#    #+#             */
-/*   Updated: 2024/10/01 23:25:51 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:48:14 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 	while (a)
 	{
 		best_match_index = LONG_MIN;
+		target_node = NULL;
 		current_b = b;
 		while (current_b)
 		{
@@ -71,11 +72,14 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 	{
 		a->push_price = a->current_position;
 		if (!(a->above_median))
-			a->push_cost = len_a - (a->current_position);
-		if (a->target_node->above_median)
-			a->push_cost += a->target_node_index;
-		else
-			a->push_cost += len_b - (a->target_node->index);
+			a->push_price = len_a - (a->current_position);
+		if (a->target_node) 
+		{
+			if (a->target_node->above_median)
+				a->push_price += a->target_node->current_position;
+			else
+			a->push_price += len_b - (a->target_node->current_position);
+		}
 		a = a->next;
 	}
 }
@@ -88,23 +92,25 @@ void	set_cheapest(t_stack_node *stack)
 	if (!stack)
 		return ;
 	cheapest_value = LONG_MAX;
+	cheapest_node = NULL;
 	while (stack)
 	{
-		if (stack->push_cost < cheapest_value)
+		if (stack->push_price < cheapest_value)
 		{
-			cheapest_value = stack->push_cost;
+			cheapest_value = stack->push_price;
 			cheapest_node = stack;
 		}
 		stack = stack->next;
 	}
-	cheapest_node->cheapest = true;
+	if (cheapest_node)
+		cheapest_node->cheapest = true;
 }
 
 void	init_nodes_a(t_stack_node **a, t_stack_node **b)
 {
-	current_index(a);
-	current_index(b);
-	set_target_a(a, b);
-	cost_analysis_a(a, b);
-	set_cheapest(a);
+	current_index(*a);
+	current_index(*b);
+	set_target_a(*a, *b);
+	cost_analysis_a(*a, *b);
+	set_cheapest(*a);
 }

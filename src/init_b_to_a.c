@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 01:30:50 by yuurin98          #+#    #+#             */
-/*   Updated: 2024/10/01 23:25:55 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:44:06 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 	while (b)
 	{
 		best_match_index = LONG_MAX;
+		target_node = NULL;
 		current_a = a;
 		while (current_a)
 		{
@@ -41,7 +42,7 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 
 void	init_nodes_b(t_stack_node **a, t_stack_node **b)
 {
-	current_index(a);
-	current_index(b);
-	set_target_b(a, b);
+	current_index(*a);
+	current_index(*b);
+	set_target_b(*a, *b);
 }

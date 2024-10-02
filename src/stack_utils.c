@@ -6,13 +6,13 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:05:46 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/01 23:26:56 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:32:18 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_len(t_stack_node *stack)
+int	stack_len(const t_stack_node *stack)
 {
 	int				len;
 
@@ -27,7 +27,7 @@ int	stack_len(t_stack_node *stack)
 	return (len);
 }
 
-t_stack_node	*stack_last(t_stack_node *stack)
+const t_stack_node	*stack_last(const t_stack_node *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -51,8 +51,8 @@ bool	stack_check(t_stack_node *stack)
 
 t_stack_node	*find_min(const t_stack_node *stack)
 {
-	long			min;
-	t_stack_node	*min_node;
+	long				min;
+	const t_stack_node	*min_node;
 
 	if (!stack)
 		return (NULL);
@@ -66,13 +66,13 @@ t_stack_node	*find_min(const t_stack_node *stack)
 		}
 		stack = stack->next;
 	}
-	return (min_node);
+	return ((t_stack_node *)min_node);
 }
 
 t_stack_node	*find_max(const t_stack_node *stack)
 {
-	long			max;
-	t_stack_node	*max_node;
+	long				max;
+	const t_stack_node	*max_node;
 
 	if (!stack)
 		return (NULL);
@@ -86,5 +86,5 @@ t_stack_node	*find_max(const t_stack_node *stack)
 		}
 		stack = stack->next;
 	}
-	return (max_node);
+	return ((t_stack_node *)max_node);
 }
