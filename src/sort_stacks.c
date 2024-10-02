@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 23:21:33 by yuurin98          #+#    #+#             */
-/*   Updated: 2024/07/18 18:37:55 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 12:01:48 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 		rev_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');
-	pb(b, a, false);
+	pb(b, a);
 }
 
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)

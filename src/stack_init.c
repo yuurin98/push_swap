@@ -6,13 +6,13 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:30:09 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/02 11:53:29 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 12:01:11 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	ft_atol(const char *s)
+static long	ft_atol(const char *s, t_stack_node **a)
 {
 	long	result;
 	int		sign;
@@ -30,8 +30,8 @@ static long	ft_atol(const char *s)
 	}
 	while (ft_isdigit(*s))
 		result = result * 10 + (*s++ - '0');
-	if (*s != '\0')
-		error_message();
+	if (result * sign > INT_MAX || result * sign < INT_MIN)
+		error_message(a);
 	return (result * sign);
 }
 
@@ -44,7 +44,7 @@ static void	append_node(t_stack_node **head, int value)
 	if (!new_node)
 	{
 		free_stack(*head);
-		error_message();
+		error_message(a);
 	}
 	new_node->value = value;
 	new_node->next = NULL;
@@ -70,12 +70,10 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	while (argv[i])
 	{
 		if (check_syntax(argv[i]))
-			error_message();
-		num = ft_atol(argv[i]);
-		if (num > INT_MAX || num < INT_MIN)
-			error_message();
+			error_message(a);
+		num = ft_atol(argv[i], a);
 		if (check_duplicate(*a, (int)num))
-			error_message();
+			error_message(a);
 		append_node(a, (int)num);
 		i++;
 	}

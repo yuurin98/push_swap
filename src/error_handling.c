@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:11:22 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/07/07 23:10:50 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:57:06 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	free_stack(t_stack_node **a)
 
 void	error_message(t_stack_node **a)
 {
-	free_stack(a);
+	free_stack(*a);
 	ft_printf("Error\n");
 	exit(1);
 }
