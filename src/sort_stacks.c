@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/07 23:21:33 by yuurin98          #+#    #+#             */
-/*   Updated: 2024/10/02 12:01:48 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:38:44 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	t_stack_node	*cheapest_node;
 
 	cheapest_node = get_cheapest(*a);
-	if (cheapest_node->above_median && cheapest_node->target_node->above_median)
+	if (cheapest_node->target_node && cheapest_node->above_median && \
+	cheapest_node->target_node->above_median)
 		rotate_both(a, b, cheapest_node);
-	else if (!(cheapest_node->above_median) && !(cheapest_node->target_node->above_median))
+	else if (cheapest_node->target_node && !(cheapest_node->above_median) && \
+	!(cheapest_node->target_node->above_median))
 		rev_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');
@@ -44,7 +46,8 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
-	prep_for_push(a, (*b)->target_node, 'a');
+	if (*b && (*b)->target_node)
+		prep_for_push(a, (*b)->target_node, 'a');
 	pa(a, b);
 }
 
@@ -56,6 +59,7 @@ static void	min_on_top(t_stack_node **a)
 			ra(a);
 		else
 			rra(a);
+		current_index(*a);
 	}
 }
 
@@ -64,19 +68,16 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 	int	len_a;
 
 	len_a = stack_len(*a);
-	if (len_a-- > 3 && !stack_check(*a))
-		pb(&b, &a);
-	if (len_a-- > 3 && !stack_check(*a))
-		pb(&b, &a);
-	while (len_a -- > 3 && !stack_check(*a))
+	while (len_a > 3 && !stack_check(*a))
 	{
-		init_nodes_a(*a, *b);
+		init_nodes_a(a, b);
 		move_a_to_b(a, b);
+		len_a--;
 	}
 	sort_three(a);
 	while (*b)
 	{
-		init_nodes_b(*a, *b);
+		init_nodes_b(a, b);
 		move_b_to_a(a, b);
 	}
 	current_index(*a);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:30:09 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/02 12:01:11 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:50:05 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static long	ft_atol(const char *s, t_stack_node **a)
 	}
 	while (ft_isdigit(*s))
 		result = result * 10 + (*s++ - '0');
-	if (result * sign > INT_MAX || result * sign < INT_MIN)
+	if (*s != '\0')
 		error_message(a);
 	return (result * sign);
 }
@@ -43,8 +43,8 @@ static void	append_node(t_stack_node **head, int value)
 	new_node = malloc(sizeof(t_stack_node));
 	if (!new_node)
 	{
-		free_stack(*head);
-		error_message(a);
+		free_stack(head);
+		error_message(head);
 	}
 	new_node->value = value;
 	new_node->next = NULL;
@@ -72,6 +72,8 @@ void	init_stack_a(t_stack_node **a, char **argv)
 		if (check_syntax(argv[i]))
 			error_message(a);
 		num = ft_atol(argv[i], a);
+		if (num > INT_MAX || num < INT_MIN)
+			error_message(a);
 		if (check_duplicate(*a, (int)num))
 			error_message(a);
 		append_node(a, (int)num);

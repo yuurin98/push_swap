@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:11:22 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/02 11:57:06 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 16:47:25 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	check_syntax(char *str)
 	int	i;
 
 	i = 0;
-	if (!(str[i] == '+' || str[i] == '-' || str[i] >= '0' && str[i] <= '9'))
+	if (!(str[i] == '+' || str[i] == '-' || (str[i] >= '0' && str[i] <= '9')))
 		return (1);
 	if ((str[i] == '+' || str[i] == '-') && !str[i + 1])
 		return (1);
@@ -63,7 +63,7 @@ void	free_stack(t_stack_node **a)
 
 void	error_message(t_stack_node **a)
 {
-	free_stack(*a);
+	free_stack(a);
 	ft_printf("Error\n");
 	exit(1);
 }

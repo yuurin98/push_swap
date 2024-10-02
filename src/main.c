@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:36:44 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/05/16 07:59:55 by codespace        ###   ########.fr       */
+/*   Updated: 2024/10/02 16:44:49 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,16 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	{
+		ft_printf("Error\n");
 		return (1);
+	}
 	if (argc == 2)
-		argv == ft_split(argv[1], ' ');
+	{
+		argv = my_split(argv[1], ' ');
+		if (!argv)
+			error_message(&a);
+	}
 	init_stack_a(&a, argv + 1);
 	if (!stack_check(a))
 	{
