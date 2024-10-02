@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:05:46 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/07/18 00:16:21 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/01 23:26:56 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ bool	stack_check(t_stack_node *stack)
 	return (true);
 }
 
-t_stack_node	*find_min(t_stack_node *stack)
+t_stack_node	*find_min(const t_stack_node *stack)
 {
 	long			min;
 	t_stack_node	*min_node;
@@ -69,7 +69,7 @@ t_stack_node	*find_min(t_stack_node *stack)
 	return (min_node);
 }
 
-t_stack_node	*find_max(t_stack_node *stack)
+t_stack_node	*find_max(const t_stack_node *stack)
 {
 	long			max;
 	t_stack_node	*max_node;

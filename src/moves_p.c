@@ -6,56 +6,42 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:13:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/07/18 00:03:30 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/02 11:06:12 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stack *stack_a, t_stack *stack_b)
+void	pa(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	int	i;
+	t_stack_node	*temp;
 
-	if (stack_b->size == 0)
+	if (*stack_b == NULL)
 		return ;
-	i = stack_a->size;
-	while (i > 0)
-	{
-		stack_a->tab[i] = stack_a->tab[i - 1];
-		i--;
-	}
-	stack_a->tab[0] = stack_b->tab[0];
-	i = 0;
-	while (i < stack_b->size)
-	{
-		stack_b->tab[i] = stack_b->tab[i + 1];
-		i++;
-	}
-	stack_a->size++;
-	stack_b->size--;
+	temp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	if (*stack_b != NULL)
+		(*stack_b)->prev = NULL;
+	temp->next = *stack_a;
+	if (*stack_a != NULL)
+		(*stack_a)->prev = temp;
+	*stack_a = temp;
 	ft_printf("pa\n");
 }
 
-void	pb(t_stack *stack_b, t_stack *stack_a)
+void	pb(t_stack_node **stack_b, t_stack_node **stack_a)
 {
-	int	i;
+	t_stack_node	*temp;
 
-	if (stack_a->size == 0)
+	if (*stack_a == NULL)
 		return ;
-	i = stack_b->size;
-	while (i > 0)
-	{
-		stack_b->tab[i] = stack_b->tab[i - 1];
-		i--;
-	}
-	stack_b->tab[0] = stack_a->tab[0];
-	i = 0;
-	while (i < stack_a->size)
-	{
-		stack_a->tab[i] = stack_a->tab[i + 1];
-		i++;
-	}
-	stack_b->size++;
-	stack_a->size--;
+	temp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	if (*stack_a != NULL)
+		(*stack_a)->prev = NULL;
+	temp->next = *stack_b;
+	if (*stack_b != NULL)
+		(*stack_b)->prev = temp;
+	*stack_b = temp;	
 	ft_printf("pb\n");
 }

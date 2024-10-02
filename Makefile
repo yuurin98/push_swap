@@ -1,27 +1,42 @@
-CC := cc
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -Iinclude
 
-CFLAGS := -Wall -Wextra -Werror
+LIBFT_DIR = ./libft
+PRINTF_DIR = ./ft_printf
 
-SRCS := main.c file1.c file2.c
+LIBFT = $(LIBFT_DIR)/libft.a
+PRINTF = $(PRINTF_DIR)/ft_printf.a
 
-OBJS := $(SRCS:.c=.o)
+SRCS =	src/main.c src/error_handling.c src/moves_p.c \
+		src/moves_s.c src/moves_r.c src/moves_rr.c \
+		src/init_a_to_b.c src/init_b_to_a.c \
+		src/sort_stacks.c src/sort_three.c src/split.c \
+		src/stack_init.c src/stack_utils.c
+OBJS = $(SRCS:.c=.o)
 
-TARGET := push_swap
+NAME = push_swap
 
-# Default target
-all: $(TARGET)
+all: $(NAME)
 
-# Compile source files into object files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(OBJS) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
 
-# Link object files into executable
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) $^ -o $@
+$(LIBFT):
+	make -C $(LIBFT_DIR)
 
-# Clean up object files and executable
+$(PRINTF):
+	make -C $(PRINTF_DIR)
+
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS)
+	make clean -C $(LIBFT_DIR)
+	make clean -C $(PRINTF_DIR)
 
-# Phony targets
-.PHONY: all clean
+fclean: clean
+	rm -f $(NAME)
+	make fclean -C $(LIBFT_DIR)
+	make fclean -C $(PRINTF_DIR)
+
+re: fclean all
+
+.PHONY: all clean fclean re

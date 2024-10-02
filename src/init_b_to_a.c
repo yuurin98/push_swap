@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 01:30:50 by yuurin98          #+#    #+#             */
-/*   Updated: 2024/07/18 01:34:16 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/01 23:25:55 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 	}
 }
 
-void	init_nodes_b(t_stack_node *a, t_stack_node *b)
+void	init_nodes_b(t_stack_node **a, t_stack_node **b)
 {
 	current_index(a);
 	current_index(b);

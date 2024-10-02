@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:30:09 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/07/18 18:35:20 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/01 23:19:52 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,29 @@ static long	ft_atol(const char *s)
 	return (result * sign);
 }
 
-static void	append_node(t_stack_node **stack, int num)
+static void	append_node(t_stack_node **head, int value)
 {
-	t_stack_node	*new;
-	t_stack_node	*last_node;
+	t_stack_node	*new_node;
+	t_stack_node	*temp;
 
-	if (!stack)
-		return ;
-	new = (t_stack_node *)malloc(sizeof(t_stack_node));
-	if (!new)
-		return ;
-	new->next = NULL;
-	new->value = num;
-	if (!(*stack))
+	new_node = malloc(sizeof(t_stack_node));
+	if (!new_node)
 	{
-		*stack = new;
-		new->prev = NULL;
+		free_stack(*head);
+		error_message();
 	}
+	new_node->value = value;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	if (!(*head))
+		*head = new_node;
 	else
 	{
-		last_node = stack_last(*stack);
-		last_node->next = new;
-		new->prev = last_node;
+		temp = *head;
+		while (temp->next)
+			temp = temp->next;
+		temp->next = new_node;
+		new_node->prev = temp;
 	}
 }
 

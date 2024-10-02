@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 13:20:46 by lchee-ti          #+#    #+#             */
-/*   Updated: 2023/11/08 14:49:56 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:11:53 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,13 @@ int	ft_printf(const char *format, ...)
 
 /*
 #include <stdio.h>
-#include <limits.h>
 
 int	main(void)
 {
-	printf("%d\n", printf(" %p %p\n", (void *)LONG_MIN, (void *)LONG_MAX));
-	ft_printf("%d\n", ft_printf(" %p %p\n", LONG_MIN, LONG_MAX));
+	char *s = "what";
+
+	printf("%p\n", s);
+	ft_printf("%p\n", s);
 	return(0);
 }
 */

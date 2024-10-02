@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 00:05:41 by yuurin98          #+#    #+#             */
-/*   Updated: 2024/07/18 01:31:07 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/01 23:25:51 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	set_cheapest(t_stack_node *stack)
 	cheapest_node->cheapest = true;
 }
 
-void	init_nodes_a(t_stack_node *a, t_stack_node *b)
+void	init_nodes_a(t_stack_node **a, t_stack_node **b)
 {
 	current_index(a);
 	current_index(b);

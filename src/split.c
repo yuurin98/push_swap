@@ -6,7 +6,7 @@
 /*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:24:32 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/07/07 23:11:09 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/01 23:27:47 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static char	*ft_word_dup(char const *s, char c)
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+char	**my_split(char const *s, char c)
 {
 	int		i;
 	int		j;

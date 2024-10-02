@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:01:51 by lchee-ti          #+#    #+#             */
-/*   Updated: 2023/11/06 15:46:11 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/09/28 22:28:43 by yuurin98         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int	ft_putstr(char *str)
 	if (str == NULL)
 	{
 		str = "(null)";
-		len = ft_strlen(str);
+		len = ft_stringlen(str);
 		while (str[++i] != '\0')
 			ft_putchar(str[i]);
 		return (len);
 	}
 	else
 	{
-		len = ft_strlen(str);
+		len = ft_stringlen(str);
 		while (str[++i] != '\0')
 			ft_putchar(str[i]);
 		return (len);

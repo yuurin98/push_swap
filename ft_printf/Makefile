@@ -3,9 +3,9 @@ SRCS		=	ft_printf.c ft_putchar.c ft_puthexlower.c ft_puthexupper.c\
 				ft_printp.c
 OBJ			=	$(SRCS:.c=.o)
 CC			=	cc
-CFLAGS		=	-Wall -Wextra -Werror
-LIBRARY		=	libftprintf
-INCLUDE		=	ft_printf.h
+CFLAGS		=	-Wall -Wextra -Werror -Iinclude
+LIBRARY		=	ft_printf
+INCLUDE		=	$(LIBRARY).h
 LIB			=	$(LIBRARY).a
 NAME		=	$(LIB)
 
