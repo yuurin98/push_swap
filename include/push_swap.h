@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:16:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/04 16:03:40 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:21:22 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,14 @@ const t_stack_node	*stack_last(const t_stack_node *stack);
 bool				stack_check(t_stack_node *stack);
 t_stack_node		*find_min(const t_stack_node *stack);
 t_stack_node		*find_max(const t_stack_node *stack);
+
+void				rotate_both(t_stack_node **a, \
+					t_stack_node **b, t_stack_node *cheapest_node);
+void				rev_rotate_both(t_stack_node **a, \
+					t_stack_node **b, t_stack_node *cheapest_node);
+void				move_a_to_b(t_stack_node **a, t_stack_node **b);
+void				move_b_to_a(t_stack_node **a, t_stack_node **b);
+void				min_on_top(t_stack_node **a);
 
 //Moves
 void				sa(t_stack_node **stack_a);
