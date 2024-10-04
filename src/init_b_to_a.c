@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_b_to_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 01:30:50 by yuurin98          #+#    #+#             */
-/*   Updated: 2024/10/02 11:44:06 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:09:27 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ static void	set_target_b(t_stack_node *a, t_stack_node *b)
 		current_a = a;
 		while (current_a)
 		{
-			if (current_a->value > b->value && current_a->value < best_match_index)
+			if (current_a->value > b->value && \
+			current_a->value < best_match_index)
 			{
 				best_match_index = current_a->value;
 				target_node = current_a;

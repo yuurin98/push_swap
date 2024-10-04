@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:36:44 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/02 16:44:49 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:17:05 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 		else if (stack_len(a) == 3)
 			sort_three(&a);
 		else
-			sort_stacks(&a,&b);
+			sort_stacks(&a, &b);
 	}
 	free_stack(&a);
 	return (0);

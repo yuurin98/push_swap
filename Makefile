@@ -11,7 +11,8 @@ SRCS =	src/main.c src/error_handling.c src/moves_p.c \
 		src/moves_s.c src/moves_r.c src/moves_rr.c \
 		src/init_a_to_b.c src/init_b_to_a.c \
 		src/sort_stacks.c src/sort_three.c src/split.c \
-		src/stack_init.c src/stack_utils.c
+		src/stack_init.c src/stack_utils.c \
+		src/sort_stacks_utils.c
 OBJS = $(SRCS:.c=.o)
 
 NAME = push_swap

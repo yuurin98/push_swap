@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:16:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/02 16:51:37 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:03:40 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void				init_nodes_b(t_stack_node **a, t_stack_node **b);
 void				current_index(t_stack_node *stack);
 void				set_cheapest(t_stack_node *stack);
 t_stack_node		*get_cheapest(t_stack_node *stack);
-void				prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name);
+void				prep_for_push(t_stack_node **stack, \
+					t_stack_node *top_node, char stack_name);
 
 //Utils
 int					stack_len(const t_stack_node *stack);

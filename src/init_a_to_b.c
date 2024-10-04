@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 00:05:41 by yuurin98          #+#    #+#             */
-/*   Updated: 2024/10/02 11:48:14 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:09:13 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ static void	set_target_a(t_stack_node *a, t_stack_node *b)
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->value < a->value && current_b->value > best_match_index)
+			if (current_b->value < a->value && \
+			current_b->value > best_match_index)
 			{
 				best_match_index = current_b->value;
 				target_node = current_b;
@@ -73,12 +74,12 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 		a->push_price = a->current_position;
 		if (!(a->above_median))
 			a->push_price = len_a - (a->current_position);
-		if (a->target_node) 
+		if (a->target_node)
 		{
 			if (a->target_node->above_median)
 				a->push_price += a->target_node->current_position;
 			else
-			a->push_price += len_b - (a->target_node->current_position);
+				a->push_price += len_b - (a->target_node->current_position);
 		}
 		a = a->next;
 	}

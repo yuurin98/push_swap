@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:30:09 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/02 16:50:05 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:15:42 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 	return (NULL);
 }
 
-void	prep_for_push(t_stack_node **stack, t_stack_node *top_node, char stack_name)
+void	prep_for_push(t_stack_node **stack, \
+t_stack_node *top_node, char stack_name)
 {
 	if (!top_node)
 		return ;

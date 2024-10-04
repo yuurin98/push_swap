@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:13:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/02 11:06:12 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:12:51 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void	pb(t_stack_node **stack_b, t_stack_node **stack_a)
 	temp->next = *stack_b;
 	if (*stack_b != NULL)
 		(*stack_b)->prev = temp;
-	*stack_b = temp;	
+	*stack_b = temp;
 	ft_printf("pb\n");
 }

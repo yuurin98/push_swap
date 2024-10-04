@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_rr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 17:43:29 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/02 11:22:36 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:13:12 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rra(t_stack_node **stack_a)
 {
 	t_stack_node	*last;
 	t_stack_node	*second_last;
-	
+
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
 	last = *stack_a;
@@ -54,7 +54,7 @@ void	rra_quiet(t_stack_node **stack_a)
 {
 	t_stack_node	*last;
 	t_stack_node	*second_last;
-	
+
 	if (*stack_a == NULL || (*stack_a)->next == NULL)
 		return ;
 	last = *stack_a;

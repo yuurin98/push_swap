@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuurin98 <yuurin98@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:16:21 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/09/29 15:11:46 by yuurin98         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:04:21 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*get_line(int fd, char *line)
 }
 
 char	*until_endline(char *line)
-{	
+{
 	char	*trimmed;
 	int		i;
 
@@ -70,7 +70,8 @@ char	*new_line(char	*line)
 		free(line);
 		return (NULL);
 	}
-	new_start = ft_substring(find_newline + 1, 0, ft_stringlength(find_newline + 1));
+	new_start = ft_substring(find_newline + 1, \
+	0, ft_stringlength(find_newline + 1));
 	free(line);
 	if (!new_start)
 		return (NULL);
