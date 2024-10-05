@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:24:32 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/04 16:15:30 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/05 15:01:53 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,21 @@ static char	*ft_word_dup(char const *s, char c)
 	return (word);
 }
 
+void	free_argv(char **argv)
+{
+	int	i;
+
+	i = 0;
+	if (!argv)
+		return ;
+	while (argv[i])
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
+}
+
 char	**my_split(char const *s, char c)
 {
 	int		i;
@@ -72,7 +87,10 @@ char	**my_split(char const *s, char c)
 		{
 			split[j] = ft_word_dup(&s[i], c);
 			if (!split[j])
+			{
+				free_argv(split);
 				return (NULL);
+			}
 			j++;
 			while (s[i] && s[i] != c)
 				i++;

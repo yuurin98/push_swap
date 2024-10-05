@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:11:22 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/04 16:04:37 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/05 14:45:48 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ void	free_stack(t_stack_node **a)
 void	error_message(t_stack_node **a)
 {
 	free_stack(a);
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }

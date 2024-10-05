@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:16:04 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/04 16:21:22 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/05 15:01:24 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int					check_duplicate(t_stack_node *a, int n);
 int					check_syntax(char *str);
 void				free_stack(t_stack_node **a);
 void				error_message(t_stack_node **a);
+void				free_argv(char **argv);
 
 //Stack initialization
 void				init_stack_a(t_stack_node **a, char **argv);
