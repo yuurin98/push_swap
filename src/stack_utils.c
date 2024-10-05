@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:05:46 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/04 16:15:57 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/05 19:21:04 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ const t_stack_node	*stack_last(const t_stack_node *stack)
 bool	stack_check(t_stack_node *stack)
 {
 	if (!stack)
-		return (1);
+		return (true);
 	while (stack->next)
 	{
 		if (stack->value > stack->next->value)
