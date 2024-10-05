@@ -6,11 +6,24 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:36:44 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/05 15:02:44 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/05 19:13:37 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	sort_stacks_if_valid(t_stack_node **a, t_stack_node **b)
+{
+	if (!stack_check(*a))
+	{
+		if (stack_len(*a) == 2)
+			sa(a);
+		else if (stack_len(*a) == 3)
+			sort_three(a);
+		else
+			sort_stacks(a, b);
+	}
+}
 
 int	main(int argc, char **argv)
 {
@@ -34,15 +47,7 @@ int	main(int argc, char **argv)
 		argv = split_argv;
 	}
 	init_stack_a(&a, argv + 1);
-	if (!stack_check(a))
-	{
-		if (stack_len(a) == 2)
-			sa(&a);
-		else if (stack_len(a) == 3)
-			sort_three(&a);
-		else
-			sort_stacks(&a, &b);
-	}
+	sort_stacks_if_valid(&a, &b);
 	free_stack(&a);
 	if (split_argv)
 		free_argv(split_argv);
