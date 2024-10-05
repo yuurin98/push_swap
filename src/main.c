@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 14:36:44 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/05 19:13:37 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/05 20:47:02 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(int argc, char **argv)
 			error_message(&a);
 		argv = split_argv;
 	}
-	init_stack_a(&a, argv + 1);
+	init_stack_a(&a, argv);
 	sort_stacks_if_valid(&a, &b);
 	free_stack(&a);
 	if (split_argv)
