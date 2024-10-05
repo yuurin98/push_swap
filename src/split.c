@@ -6,7 +6,7 @@
 /*   By: lchee-ti <lchee-ti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 12:24:32 by lchee-ti          #+#    #+#             */
-/*   Updated: 2024/10/05 15:01:53 by lchee-ti         ###   ########.fr       */
+/*   Updated: 2024/10/05 18:25:27 by lchee-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,31 @@ void	free_argv(char **argv)
 	free(argv);
 }
 
+static int	fill_split(char **split, char const *s, char c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			split[j] = ft_word_dup(&s[i], c);
+			if (!split[j])
+				return (0);
+			j++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
+		else
+			i++;
+	}
+	split[j] = NULL;
+	return (1);
+}
+
 char	**my_split(char const *s, char c)
 {
 	int		i;
@@ -81,23 +106,10 @@ char	**my_split(char const *s, char c)
 	split = (char **)malloc(sizeof(char *) * (ft_word_count(s, c) + 1));
 	if (!split)
 		return (NULL);
-	while (s[i])
+	if (!fill_split(split, s, c))
 	{
-		if (s[i] != c)
-		{
-			split[j] = ft_word_dup(&s[i], c);
-			if (!split[j])
-			{
-				free_argv(split);
-				return (NULL);
-			}
-			j++;
-			while (s[i] && s[i] != c)
-				i++;
-		}
-		else
-			i++;
+		free_argv(split);
+		return (NULL);
 	}
-	split[j] = NULL;
 	return (split);
 }
